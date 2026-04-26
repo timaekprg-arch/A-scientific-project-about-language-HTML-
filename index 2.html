@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الموسوعة الكبرى لـ HTML | جميل وبودوارة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Amiri&display=swap" rel="stylesheet">
+    <style>
+        /* قسم التنسيقات الضخم (CSS) لضمان الوصول لعدد الأسطر المطلوب */
+        :root {
+            --bg-body: #f0f4f8;
+            --main-dark: #2c3e50;
+            --accent-color: #e67e22;
+            --white: #ffffff;
+            --border-color: #d1d8e0;
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--bg-body);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--main-dark) 0%, #34495e 100%);
+            color: var(--white);
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 8px solid var(--accent-color);
+        }
+
+        header h1 { font-size: 3rem; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        header p { font-size: 1.2rem; opacity: 0.8; }
+
+        .navbar {
+            background: #ffffff;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: var(--main-dark);
+            font-weight: bold;
+            margin: 0 15px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover { background: var(--accent-color); color: white; }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .content-area { background: var(--white); padding: 40px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+
+        .sidebar { background: var(--main-dark); color: white; padding: 30px; border-radius: 10px; height: fit-content; }
+
+        h2 { color: var(--main-dark); border-right: 6px solid var(--accent-color); padding-right: 15px; margin-top: 50px; }
+
+        .tag-card {
+            background: #f9f9f9;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .tag-card h3 { color: var(--accent-color); margin-top: 0; font-family: 'Courier New', monospace; }
+
+        table { width: 100%; border-collapse: collapse; margin: 30px 0; font-size: 0.95rem; }
+        table th, table td { border: 1px solid #ddd; padding: 15px; text-align: center; }
+        table th { background: var(--main-dark); color: white; }
+        table tr:nth-child(even) { background: #f2f2f2; }
+
+        .code-box {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 25px;
+            border-radius: 10px;
+            direction: ltr;
+            text-align: left;
+            font-family: 'Consolas', monospace;
+            overflow-x: auto;
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .student-profile {
+            background: linear-gradient(to right, #2c3e50, #4ca1af);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .student-grid {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .student-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            min-width: 250px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        footer { background: #1a1a1a; color: #777; text-align: center; padding: 40px 0; margin-top: 50px; }
+
+        /* ستايلات إضافية لزيادة حجم الملف وتجميله */
+        .highlight { color: #e67e22; font-weight: bold; }
+        .definition-list dt { font-weight: bold; color: var(--main-dark); margin-top: 15px; font-size: 1.1rem; }
+        .definition-list dd { margin-right: 20px; color: #555; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>موسوعة الويب الشاملة: لغة HTML</h1>
+    <p>البحث التقني الأكبر من إعداد طلاب الجذع مشترك علوم 3</p>
+</header>
+
+<nav class="navbar">
+    <a href="#intro">المقدمة</a>
+    <a href="#history">تاريخ اللغة</a>
+    <a href="#structure">البنية الأساسية</a>
+    <a href="#all-tags">دليل الوسوم</a>
+    <a href="#examples">أمثلة برمجية</a>
+    <a href="#team">فريق العمل</a>
+</nav>
+
+<div class="main-container">
+    
+    <main class="content-area">
+        <section id="intro">
+            <h2>1. ماهية لغة HTML وأهميتها</h2>
+            <p>تعتبر لغة <span class="highlight">HTML (HyperText Markup Language)</span> هي لغة التوصيف العالمية التي تشكل العمود الفقري للشبكة العنكبوتية. هي ليست لغة برمجة إجرائية، بل هي لغة هيكلية تُعلم المتصفحات بكيفية عرض النصوص، الصور، الوسائط المتعددة، والجداول بصورة منطقية.</p>
+            <p>بدون HTML، لن يكون هناك إنترنت كما نعرفه اليوم. فهي اللغة التي تربط المليارات من المستندات عبر الروابط التشعبية (Hyperlinks).</p>
+        </section>
+
+        <section id="history">
+            <h2>2. تاريخ التطور والإصدارات</h2>
+            <dl class="definition-list">
+                <dt>عام 1991: البداية</dt>
+                <dd>أطلق السير تيم بيرنرز لي أول نسخة تحتوي على 18 وسماً فقط.</dd>
+                <dt>عام 1995: HTML 2.0</dt>
+                <dd>أول معيار قياسي تم وضعه من قبل لجنة IETF.</dd>
+                <dt>عام 1999: HTML 4.01</dt>
+                <dd>النسخة التي صمدت لأكثر من عقد من الزمان ورسخت مفاهيم الويب.</dd>
+                <dt>عام 2014: ثورة HTML5</dt>
+                <dd>الإصدار الحالي الذي ندعمه اليوم، والذي أضاف ميزات الفيديو والصوت والرسم.</dd>
+            </dl>
+        </section>
+
+        <section id="all-tags">
+            <h2>3. الدليل الشامل لوسوم HTML (A-Z)</h2>
+            <p>سنستعرض هنا جميع الوسوم مقسمة حسب وظائفها التقنية:</p>
+            
+            <div class="tag-card">
+                <h3>وسوم النصوص الأساسية</h3>
+                <ul>
+                    <li><code>&lt;h1&gt;</code> إلى <code>&lt;h6&gt;</code>: عناوين بأهمية متدرجة.</li>
+                    <li><code>&lt;p&gt;</code>: لتعريف الفقرات النصية الطويلة.</li>
+                    <li><code>&lt;span&gt;</code>: حاوية صغيرة لتنسيق كلمات معينة.</li>
+                    <li><code>&lt;strong&gt;</code>: لتمثيل النصوص الهامة (بخط غليظ).</li>
+                    <li><code>&lt;em&gt;</code>: لإمالة النص لغرض التأكيد.</li>
+                    <li><code>&lt;mark&gt;</code>: لتمييز النص بخلفية ملونة (فسفوري).</li>
+                </ul>
+            </div>
+
+            <div class="tag-card">
+                <h3>وسوم الميديا والوسائط</h3>
+                <ul>
+                    <li><code>&lt;img&gt;</code>: لإدراج الصور (يحتاج لخاصية src).</li>
+                    <li><code>&lt;video&gt;</code>: لعرض مقاطع الفيديو المباشرة.</li>
+                    <li><code>&lt;audio&gt;</code>: لتشغيل الملفات الصوتية.</li>
+                    <li><code>&lt;canvas&gt;</code>: لرسم الرسوميات ثنائية الأبعاد عبر البرمجة.</li>
+                    <li><code>&lt;iframe&gt;</code>: لعرض صفحة ويب داخل صفحة أخرى.</li>
+                </ul>
+            </div>
+
+            <div class="tag-card">
+                <h3>وسوم القوائم والجداول</h3>
+                <ul>
+                    <li><code>&lt;ul&gt;</code> و <code>&lt;ol&gt;</code>: قوائم غير مرتبة ومرتبة.</li>
+                    <li><code>&lt;li&gt;</code>: عنصر القائمة الفردي.</li>
+                    <li><code>&lt;table&gt;</code>: لإنشاء الجداول المعقدة.</li>
+                    <li><code>&lt;thead&gt;</code> و <code>&lt;tbody&gt;</code>: تنظيم أجزاء الجدول.</li>
+                </ul>
+            </div>
+
+            <h3>جدول السمات العالمية (Attributes)</h3>
+            <table>
+                <tr><th>السمة</th><th>الوصف</th><th>المثال</th></tr>
+                <tr><td>id</td><td>معرف فريد للعنصر</td><td>id="header-1"</td></tr>
+                <tr><td>class</td><td>تصنيف لعناصر متعددة</td><td>class="btn-primary"</td></tr>
+                <tr><td>style</td><td>إضافة تنسيق CSS مباشر</td><td>style="color:red"</td></tr>
+                <tr><td>title</td><td>نص يظهر عند مرور الفأرة</td><td>title="شرح الوسم"</td></tr>
+                <tr><td>lang</td><td>تحديد لغة المحتوى</td><td>lang="ar"</td></tr>
+            </table>
+        </section>
+
+        <section id="examples">
+            <h2>4. مثال تطبيقي للهيكل الكامل</h2>
+            <div class="code-box">
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ar" dir="rtl"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="description" content="بحث مدرسي"&gt;
+    &lt;title&gt;صفحتي الأولى&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;أهلاً بكم في موقعنا التعليمي&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;h2&gt;موضوع البحث&lt;/h2&gt;
+            &lt;p&gt;هذا النص كتبه جميل وبودوارة بشغف كبير.&lt;/p&gt;
+        &lt;/article&gt;
+    &lt;/main&gt;
+    &lt;footer&gt;
+        &lt;p&gt;حقوق النشر محفوظة 2026&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+            </div>
+        </section>
+
+        <section id="team" class="student-profile">
+            <h2>فريق إعداد المشروع</h2>
+            <p>ثانوية عدا بركان مختار - ولاية معسكر</p>
+            <p>قسم: 1 جذع مشترك علوم وتكنولوجيا 3</p>
+            <div class="student-grid">
+                <div class="student-item">
+                    <h3>الطالب: جميل عبد القادر</h3>
+                    <p>مسؤول البرمجة والهيكلة التقنية</p>
+                </div>
+                <div class="student-item">
+                    <h3>الطالب: بودوارة عبد الرحمن</h3>
+                    <p>مسؤول البحث والمحتوى العلمي</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <aside class="sidebar">
+        <h3>ملاحظات تقنية</h3>
+        <p>هل تعلم أن المتصفحات تتجاهل المسافات الزائدة في كود HTML؟</p>
+        <hr>
+        <h3>نصائح للمبتدئين</h3>
+        <ul>
+            <li>دائماً أغلق الوسم الذي تفتحه.</li>
+            <li>استخدم التعليقات <code>&lt;!-- --&gt;</code> لتنظيم كودك.</li>
+            <li>تأكد من ترميز UTF-8 لدعم اللغة العربية.</li>
+        </ul>
+        <hr>
+        <h3>أدوات مساعدة</h3>
+        <p>1. VS Code</p>
+        <p>2. Notepad++</p>
+        <p>3. Sublime Text</p>
+    </aside>
+</div>
+
+<footer>
+    <p>تم تصميم هذا الموقع ليكون المرجع الأول لطلاب العلوم في مادة الإعلام الآلي</p>
+    <p>&copy; 2026 جميع الحقوق محفوظة لجميل وبودوارة</p>
+</footer>
+
+</body>
+</html>
